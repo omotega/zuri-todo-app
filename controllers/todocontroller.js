@@ -17,7 +17,7 @@ const createTodo = async (req, res) => {
     });
     res.status(201).json(newtodo);
   } catch (error) {
-    res.status(500).json("could not create the todo");
+    res.status(400).json("could not create the todo");
   }
 };
 
@@ -32,7 +32,7 @@ const updateTodo = async (req, res) => {
     });
     res.status(200).json(updatedTodo);
   } catch (error) {
-    res.staus(200).json("could not update todo");
+    res.status(400).json("could not update todo");
   }
 };
 
@@ -45,7 +45,7 @@ const deleteTodo = async (req, res) => {
     const deletedtodo = await Todo.deleteOne(todo);
     res.status(200).json(todo);
   } catch (error) {
-    res.status(200).json("could not delete todo");
+    res.status(400).json("could not delete todo");
   }
 };
 
